@@ -16,6 +16,17 @@ module Enumerable
     return array
   end
 
+  def my_all?
+    boolean = true
+    self.each do |element|
+      unless yield(element)
+        boolean = false
+        break
+      end
+    end
+    return boolean
+  end
+
 end
 
 # You will first have to define my_each
