@@ -63,6 +63,12 @@ module Enumerable
     return count
   end
 
+  def my_map
+    array = []
+    self.each {|element| array.push(yield(element))}
+    return array 
+  end
+
 end
 
 # You will first have to define my_each
