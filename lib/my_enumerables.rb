@@ -69,6 +69,15 @@ module Enumerable
     return array 
   end
 
+  def my_inject(initial_value = nil)
+    if initial_value
+      sum = initial_value
+    else
+      sum = self[0]
+    end
+    self.each {|element| sum = yield(sum, element)}
+    return sum
+  end
 end
 
 # You will first have to define my_each
