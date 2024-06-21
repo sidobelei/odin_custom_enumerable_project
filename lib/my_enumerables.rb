@@ -2,7 +2,14 @@ module Enumerable
   # Your code goes here
 
   def my_each_with_index
+    index = 0
+    self.my_each do |element| 
+      yield(element, index)
+      index += 1
+    end
+    return self
   end
+   
 end
 
 # You will first have to define my_each
@@ -13,7 +20,7 @@ class Array
   # Define my_each here
   def my_each
     index = 0
-    while i < self.length  
+    while index < self.length  
       element = self[index]
       yield(element)
       index += 1
