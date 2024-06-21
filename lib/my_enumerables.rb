@@ -38,6 +38,17 @@ module Enumerable
     return boolean
   end
 
+  def my_none?
+    boolean = true
+    self.each do |element|
+       if yield(element)
+        boolean = false
+        break
+      end
+    end
+    return boolean
+  end
+  
 end
 
 # You will first have to define my_each
