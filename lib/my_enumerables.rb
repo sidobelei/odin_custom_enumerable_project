@@ -48,7 +48,21 @@ module Enumerable
     end
     return boolean
   end
-  
+
+  def my_count
+    count = 0
+    if block_given?
+      self.each do |element|
+        if yield(element)
+          count += 1
+        end
+      end
+    else 
+      self.each {|element| count += 1}
+    end
+    return count
+  end
+
 end
 
 # You will first have to define my_each
